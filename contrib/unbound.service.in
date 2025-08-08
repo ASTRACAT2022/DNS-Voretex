@@ -40,7 +40,7 @@
 ;
 ;
 [Unit]
-Description=Validating, recursive, and caching DNS resolver
+Description=astracatvortex
 Documentation=man:unbound(8)
 After=network-online.target
 Before=nss-lookup.target
