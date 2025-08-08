@@ -142,11 +142,11 @@ print_build_options(void)
 static void
 usage(void)
 {
-	printf("usage:  unbound [options]\n");
+	printf("usage:  astracat voretex [options]\n");
 	printf("	start unbound daemon DNS resolver.\n");
 	printf("-h	this help.\n");
 	printf("-c file	config file to read instead of %s\n", CONFIGFILE);
-	printf("	file format is described in unbound.conf(5).\n");
+	printf("	file format is described in conf(5).\n");
 	printf("-d	do not fork into the background.\n");
 	printf("-p	do not create a pidfile.\n");
 	printf("-v	verbose (more times to increase verbosity).\n");
@@ -417,7 +417,7 @@ checkoldpid(char* pidfile, int inchroot)
 	if((old = readpid(pidfile)) != -1) {
 		/* see if it is still alive */
 		if(kill(old, 0) == 0 || errno == EPERM)
-			log_warn("unbound is already running as pid %u.", 
+			log_warn("astracat voretex is already running as pid %u.", 
 				(unsigned)old);
 		else	if(inchroot)
 			log_warn("did not exit gracefully last time (%u)", 
@@ -745,7 +745,7 @@ run_daemon(const char* cfgfile, int cmdline_verbose, int debug_mode, int need_pi
 				fatal_exit("Could not read config file: %s."
 					" Maybe try unbound -dd, it stays on "
 					"the commandline to see more errors, "
-					"or unbound-checkconf", cfgfile);
+					"or astracat vortex checkconf", cfgfile);
 			log_warn("Continuing with default config settings");
 			config_auto_slab_values(cfg);
 		}
